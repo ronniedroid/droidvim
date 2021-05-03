@@ -1,5 +1,3 @@
-local map = require('utils').map
-
 require'compe'.setup {
   enabled = true;
   autocomplete = true;

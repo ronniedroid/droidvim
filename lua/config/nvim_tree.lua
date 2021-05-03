@@ -1,6 +1,4 @@
 local tree_cb = require('nvim-tree.config').nvim_tree_callback
-local utils = require('utils')
-local map = utils.map
 
 vim.g.nvim_tree_bindings = {
       ["o"]              = tree_cb("edit"),
