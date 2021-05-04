@@ -11,6 +11,7 @@ map("n", "<C-_>", "<cmd>CommentToggle<cr>")
 map("v", "<C-_>", "<Esc><cmd>'<,'>CommentToggle<CR>gv")
 map("n", "<C-f>", "<cmd>Format<CR>")
 map("i", "<C-f>", "<cmd>Format<CR>")
+map("n", "<C-c><C-e>", "<cmd>luafile%<cr>")
 
 wk.register(
   {
@@ -38,7 +39,38 @@ wk.register(
       ["8"] = {"<cmd>BufferGoto 8<cr>", "Go to 8"},
       ["9"] = {"<cmd>BufferGoto 9<cr>", "Go to 9"},
       c = {"<cmd>BufferClose<cr>", "Close buffer"},
+      o = {"<cmd>BufferCloseAllButCurrent<cr>", "Keep only current buffer"},
       s = {"<cmd>BufferPick<cr>", "Pick a buffer"}
+    },
+    w = {
+      name = "Window",
+      h = {"<C-w><C-h>", "Move to left window"},
+      j = {"<C-w><C-j>", "Move to below window"},
+      k = {"<C-w><C-k>", "Move to above window"},
+      l = {"<C-w><C-l>", "Move to right window"},
+      w = {"<C-w>w", "Move to other window"},
+      x = {"<C-w>x", "Swap with other window"},
+      s = {"<C-w>s", "Split window"},
+      v = {"<C-w>v", "Split window vertically"},
+      c = {"<C-w>q", "Close window"},
+      o = {"<C-w>o", "Keep only current window"},
+      t = {"<C-w>T", "Move window to a tab"},
+      n = {"<C-w>=", "Normalize Windows"},
+      m = {
+        name = "Max",
+        w = {"<C-w>|", "Max out width"},
+        h = {"<C-w>_", "Max out hight"}
+      },
+      i = {
+        name = "Increase",
+        w = {"<cmd>vertical resize +10<cr>", "Increase width"},
+        h = {"<cmd>resize +10<cr>", "Increase hight"}
+      },
+      d = {
+        name = "Decrease",
+        w = {"<cmd>vertical resize -10<cr>", "Decrease width"},
+        h = {"<cmd>resize -10<cr>", "Decrease hight"}
+      }
     }
   },
   {prefix = "<Leader>"}
