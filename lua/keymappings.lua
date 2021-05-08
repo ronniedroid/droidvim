@@ -23,6 +23,10 @@ wk.register(
       e = {"<cmd>lua require'lir.float'.toggle()<cr>", "Open File Explorer"},
       t = {"<cmd>NvimTreeToggle<cr>", "Open Nvim Tree"}
     },
+    p = {
+      name = "Projects",
+      p = {":lua require'telescope'.extensions.project.project{}<CR>", "Projects"}
+    },
     b = {
       name = "Buffer",
       l = {"<cmd>BufferPrevious<cr>", "Next buffer"},
