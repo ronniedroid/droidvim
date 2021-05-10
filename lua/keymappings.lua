@@ -11,7 +11,8 @@ map("n", "<C-_>", "<cmd>CommentToggle<cr>")
 map("v", "<C-_>", "<Esc><cmd>'<,'>CommentToggle<CR>gv")
 map("n", "<C-f>", "<cmd>Format<CR>")
 map("i", "<C-f>", "<cmd>Format<CR>")
-map("n", "<C-c><C-e>", "<cmd>luafile%<cr>")
+map("n", "<A-t>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+map("t", "<A-t>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 
 wk.register(
   {
@@ -21,11 +22,27 @@ wk.register(
       r = {"<cmd>Telescope oldfiles<cr>", "Recent Files"},
       n = {"<cmd>enew<cr>", "New File"},
       e = {"<cmd>lua require'lir.float'.toggle()<cr>", "Open File Explorer"},
-      t = {"<cmd>NvimTreeToggle<cr>", "Open Nvim Tree"}
+      l = {"<cmd>luafile%<cr>", "eval lua file"}
     },
     p = {
       name = "Projects",
       p = {":lua require'telescope'.extensions.project.project{}<CR>", "Projects"}
+    },
+    l = {
+      name = "LSP",
+      f = {"<cmd>Lspsaga lsp_finder<cr>", "find cursor word definition/reference"},
+      a = {"<cmd>Lspsaga code_action<cr>", "code action"},
+      h = {"<cmd>Lspsaga hover_doc<cr>", "hover documentation"},
+      s = {"<cmd>Lspsaga signature_help<cr>", "signature help"},
+      r = {"<cmd>Lspsaga rename<cr>", "rename all instances"},
+      p = {"<cmd>Lspsaga preview_definition<cr>", "preview definition"},
+      d = {
+        name = "diagnostics",
+        l = {"<cmd>Lspsaga show_line_diagnostics<cr>", "show line diagnostics"},
+        c = {"<cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<cr>", "show cursor diagnostics"},
+        n = {"<cmd>Lspsaga diagnostic_jump_next<cr>", "jump to next diagnostics"},
+        p = {"<cmd>Lspsaga diagnostic_jump_prev<cr>", "jump to previous diagnostics"}
+      }
     },
     b = {
       name = "Buffer",

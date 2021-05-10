@@ -15,7 +15,7 @@ paq {"nvim-treesitter/nvim-treesitter", run = "<cmd>:TSUpdate"}
 paq "savq/paq-nvim"
 paq "ishan9299/modus-theme-vim"
 paq "tamago324/lir.nvim"
-
+paq "numtostr/FTerm.nvim"
 paq "nvim-lua/popup.nvim"
 paq "nvim-lua/plenary.nvim"
 paq "nvim-telescope/telescope.nvim" --uses popup & plenary
@@ -23,8 +23,6 @@ paq "nvim-telescope/telescope-project.nvim"
 
 paq "hoob3rt/lualine.nvim"
 paq "kyazdani42/nvim-web-devicons"
-
-paq "kyazdani42/nvim-tree.lua"
 
 paq "hrsh7th/nvim-compe"
 paq "hrsh7th/vim-vsnip"
