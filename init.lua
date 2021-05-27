@@ -14,4 +14,4 @@ require("lsp.css-ls")
 require("lsp.emmet-ls")
 require("lsp.html-ls")
 require("lsp.svelte-ls")
-
+require("lsp.js-ts-ls")

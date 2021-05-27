@@ -13,6 +13,8 @@ map("n", "<C-f>", "<cmd>Format<CR>")
 map("i", "<C-f>", "<cmd>Format<CR>")
 map("n", "<A-t>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 map("t", "<A-t>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+map("n", "<A-j>", "<cmd>lua require'lspsaga.action'.smart_scroll_with_saga(1)<CR>")
+map("n", "<A-k>", "<cmd>lua require'lspsaga.action'.smart_scroll_with_saga(-1)<CR>")
 
 wk.register(
   {
