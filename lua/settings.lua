@@ -28,5 +28,7 @@ opt("o", "clipboard", "unnamed,unnamedplus")
 opt("o", "termguicolors", true)
 opt("o", "mouse", "a")
 opt("o", "timeoutlen", 300)
+opt("g", "loaded_netrw", 1)
+opt("g", "loaded_netrwPlugin", 1)
 
 cmd "colorscheme modus-vivendi"

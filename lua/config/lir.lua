@@ -2,6 +2,18 @@ local actions = require "lir.actions"
 local mark_actions = require "lir.mark.actions"
 local clipboard_actions = require "lir.clipboard.actions"
 
+local cmd = vim.cmd
+local api = vim.api
+local fn = vim.fn
+
+local function goto_git_root()
+  local dir = require "lspconfig.util".find_git_ancestor(fn.getcwd())
+  if dir == nil or dir == "" then
+    return
+  end
+  cmd("e " .. dir)
+end
+
 require "lir".setup {
   show_hidden_files = false,
   devicons_enable = true,
@@ -21,11 +33,14 @@ require "lir".setup {
     ["D"] = actions.delete,
     ["J"] = function()
       mark_actions.toggle_mark()
-      vim.cmd("normal! j")
+      cmd("normal! j")
     end,
     ["C"] = clipboard_actions.copy,
     ["X"] = clipboard_actions.cut,
-    ["P"] = clipboard_actions.paste
+    ["P"] = clipboard_actions.paste,
+    ["g"] = function()
+      goto_git_root()
+    end
   },
   float = {
     size_percentage = 0.5,
@@ -41,7 +56,7 @@ require "lir".setup {
 
 -- use visual mode
 function _G.LirSettings()
-  vim.api.nvim_buf_set_keymap(
+  api.nvim_buf_set_keymap(
     0,
     "x",
     "J",
