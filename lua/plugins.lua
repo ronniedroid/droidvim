@@ -18,8 +18,10 @@ paq {
   "numtostr/FTerm.nvim",
   "nvim-lua/popup.nvim",
   "nvim-lua/plenary.nvim",
+  "terrortylor/nvim-comment",
   "nvim-telescope/telescope.nvim", --uses popup & plenary
   "nvim-telescope/telescope-project.nvim",
+  "JoosepAlviste/nvim-ts-context-commentstring",
   "hoob3rt/lualine.nvim",
   "kyazdani42/nvim-web-devicons",
   "hrsh7th/nvim-compe",
@@ -30,7 +32,6 @@ paq {
   "glepnir/lspsaga.nvim",
   "onsails/lspkind-nvim",
   "jiangmiao/auto-pairs",
-  "terrortylor/nvim-comment",
   "romgrk/barbar.nvim",
   "folke/which-key.nvim",
   "mhartington/formatter.nvim"

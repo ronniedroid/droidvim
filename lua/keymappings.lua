@@ -7,12 +7,20 @@ opt("g", "mapleader", [[ ]])
 
 map("n", "<C-l>", "<cmd>noh<CR>") -- clear highlighting
 map("i", "<C-j>", "<Esc>") -- leave insert mode
-map("n", "<C-_>", "<cmd>CommentToggle<cr>")
-map("v", "<C-_>", "<Esc><cmd>'<,'>CommentToggle<CR>gv")
+map(
+  "n",
+  "<C-_>",
+  "<cmd>lua require'ts_context_commentstring.internal'.update_commentstring()<cr> | <cmd>CommentToggle<cr>"
+)
+map(
+  "v",
+  "<C-_>",
+  "<Esc><cmd>lua require'ts_context_commentstring.internal'.update_commentstring()<cr> | <Esc><cmd>'<,'>CommentToggle<CR>gv"
+)
 map("n", "<C-f>", "<cmd>Format<CR>")
 map("i", "<C-f>", "<cmd>Format<CR>")
-map("n", "<A-t>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
-map("t", "<A-t>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+map("n", "<C-t>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+map("t", "<C-t>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 map("n", "<A-j>", "<cmd>lua require'lspsaga.action'.smart_scroll_with_saga(1)<CR>")
 map("n", "<A-k>", "<cmd>lua require'lspsaga.action'.smart_scroll_with_saga(-1)<CR>")
 

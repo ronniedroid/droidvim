@@ -1,8 +1,27 @@
 require "nvim-treesitter.configs".setup {
-  ensure_installed = {"javascript", "rust", "bash", "css", "html", "json", "lua", "svelte", "vue"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  --ignore_install = {"javascript"}, -- List of parsers to ignore installing
+  ensure_installed = {"javascript", "rust", "bash", "css", "html", "json", "lua", "svelte", "vue"},
   highlight = {
-    enable = true -- false will disable the whole extension
-    --disable = { "c", "rust" },  -- list of language that will be disabled
+    enable = true
+  },
+  context_commentstring = {
+    enable = true,
+    config = {
+      -- Languages that have a single comment style
+      typescript = "// %s",
+      css = "/* %s */",
+      scss = "/* %s */",
+      php = "// %s",
+      html = "<!-- %s -->",
+      svelte = "<!-- %s -->",
+      vue = {
+        __default = "<!-- %s -->",
+        template = "<!-- %s -->",
+        html = "<!-- %s -->",
+        javascript = "// %s",
+        script = "// %s",
+        css = "/* %s */",
+        comment = "<!-- %s -->"
+      }
+    }
   }
 }
