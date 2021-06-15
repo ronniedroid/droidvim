@@ -13,6 +13,7 @@ require "nvim-treesitter.configs".setup {
       php = "// %s",
       html = "<!-- %s -->",
       svelte = "<!-- %s -->",
+      lua = "-- %s",
       vue = {
         __default = "<!-- %s -->",
         template = "<!-- %s -->",
