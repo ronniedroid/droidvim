@@ -1,19 +1,17 @@
-local nvim_lsp = require'lspconfig'
-local configs = require'lspconfig/configs'
+local lspconfig = require "lspconfig"
+local configs = require "lspconfig/configs"
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-configs.emmet_ls = {
-  default_config = {
-    cmd = {'emmet-ls', '--stdio'};
-    filetypes = {'html', 'css'};
-    root_dir = function()
-      return vim.loop.cwd()
-    end;
-    settings = {};
-  };
-}
-
-nvim_lsp.emmet_ls.setup{
-  -- on_attach = on_attach;
-}
+if not lspconfig.emmet_ls then
+  configs.emmet_ls = {
+    default_config = {
+      cmd = {"emmet-ls", "--stdio"},
+      filetypes = {"html", "css", "vue"},
+      root_dir = function(fname)
+        return vim.loop.cwd()
+      end,
+      settings = {}
+    }
+  }
+end
+lspconfig.emmet_ls.setup {capabilities = capabilities}

@@ -4,7 +4,7 @@ local opt = utils.opt
 local wk = require("which-key")
 
 opt("g", "mapleader", [[ ]])
-
+map("i", "<CR>", "compe#confirm('<CR>')", {silent = true, expr = true})
 map("n", "<C-l>", "<cmd>noh<CR>") -- clear highlighting
 map("i", "<C-j>", "<Esc>") -- leave insert mode
 map(

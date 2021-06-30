@@ -26,6 +26,7 @@ paq {
   "kyazdani42/nvim-web-devicons",
   "hrsh7th/nvim-compe",
   "hrsh7th/vim-vsnip",
+  "hrsh7th/vim-vsnip-integ",
   "rafamadriz/friendly-snippets",
   "neovim/nvim-lspconfig",
   "kabouzeid/nvim-lspinstall",
